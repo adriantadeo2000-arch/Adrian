@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pagar - Luxura Shoes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../IMG/SVG/Luxura Shoes.png">
+    <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="stylesheet" href="../CSS/checkout.css">
+</head>
+
+<body>
+
+    
+
+    <div class="login-container checkout-container">
+
+        <div class="luxura">
+            <img src="../IMG/PNG/Luxura Shoes.png" alt="Luxura Shoes">
+        </div>
+
+        <h1>Pagar pedido</h1>
+
+        <p class="subtitle">
+            Sesión iniciada como <strong id="usuarioCheckout"></strong>
+        </p>
+
+        <div class="resumen-pedido">
+
+            <h2>Resumen del pedido</h2>
+
+            <div id="listaResumen"></div>
+
+            <div class="total-resumen">
+                <span>Total</span>
+                <span id="totalResumen">$0.00</span>
+            </div>
+
+        </div>
+
+        <form id="formPago">
+
+            <h2>Datos de envío</h2>
+
+            <div class="input-group">
+                <label>Nombre completo</label>
+                <input type="text" id="nombreCompleto">
+            </div>
+
+            <div class="input-group">
+                <label>Dirección</label>
+                <input type="text" id="direccion">
+            </div>
+
+            <div class="input-group mitad">
+                <div>
+                    <label>Ciudad</label>
+                    <input type="text" id="ciudad">
+                </div>
+                <div>
+                    <label>Código postal</label>
+                    <input type="text" id="codigoPostal">
+                </div>
+            </div>
+
+            <h2>Método de pago</h2>
+
+            <div class="metodos-pago">
+
+                <label class="metodo-opcion">
+                    <input type="radio" name="metodoPago" id="metodoTarjeta" checked>
+                    Tarjeta de crédito / débito
+                </label>
+
+                <label class="metodo-opcion">
+                    <input type="radio" name="metodoPago" id="metodoContraentrega">
+                    Pago contra entrega
+                </label>
+
+            </div>
+
+            <div id="datosTarjeta">
+
+                <div class="input-group">
+                    <label>Número de tarjeta</label>
+                    <input type="text" id="numeroTarjeta" maxlength="16" placeholder="0000000000000000">
+                </div>
+
+                <div class="input-group mitad">
+                    <div>
+                        <label>Vencimiento</label>
+                        <input type="text" id="vencimiento" placeholder="MM/AA">
+                    </div>
+                    <div>
+                        <label>CVV</label>
+                        <input type="text" id="cvv" maxlength="4" placeholder="123">
+                    </div>
+                </div>
+
+            </div>
+
+            <button type="submit" id="botonConfirmar" class="login-button">Confirmar pedido</button>
+
+            <p id="mensajePago"></p>
+
+        </form>
+
+    </div>
+
+    <script src="../JS/checkout.js"></script>
+
+</body>
+</html>
