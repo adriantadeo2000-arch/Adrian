@@ -914,3 +914,17 @@ a {
         top: 90px;
     }
 }
+
+@media (max-width: 600px) {
+    .search-box.activo {
+        max-width: 100px;
+    }
+
+    .search-box input {
+        width: 100px;
+    }
+
+    .resultados {
+        width: 200px;
+    }
+}
