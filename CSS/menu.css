@@ -1,0 +1,151 @@
+/* ===== Menú hamburguesa (teléfono, tablet y escritorio) =====
+   Enlazar DESPUÉS del CSS principal de cada página. */
+
+/* ----- Botón: tres rayitas a la izquierda del logo ----- */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.menu-toggle:focus-visible {
+    outline: 2px solid #926a4e;
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: #111;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+/* Hamburguesa -> X */
+.menu-toggle.abierto span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.abierto span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.abierto span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* ----- Panel desplegable ----- */
+.menu-panel {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 260px;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    background-color: #f2e5dc;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 0 0 14px 0;
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.12);
+}
+
+.menu-panel.abierto {
+    display: block;
+    animation: menuBajar 0.25s ease;
+}
+
+.menu-grupo {
+    padding: 6px 0;
+}
+
+.menu-panel a {
+    display: block;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.menu-panel a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* ----- Tablet: la barra completa sigue visible, se aprieta un poco ----- */
+@media (min-width: 601px) and (max-width: 820px) {
+    .nav-links {
+        gap: 16px;
+    }
+}
+
+
+/* ----- Teléfono: los enlaces de la barra pasan al menú ----- */
+@media (max-width: 600px) {
+
+    body {
+        padding-top: 70px;
+    }
+
+    .navbar {
+        height: 70px;
+        min-height: 70px;
+        flex-wrap: nowrap;
+        padding: 0 15px;
+    }
+
+    .navbar .nav-links {
+        display: none;
+    }
+
+    .logo {
+        margin-right: auto;
+        flex-shrink: 0;
+    }
+
+    .nav-iconos {
+        order: 0;
+    }
+
+    .menu-panel {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .menu-panel a {
+        padding: 14px 22px;
+        font-size: 15px;
+    }
+}
+
+
+@keyframes menuBajar {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .menu-panel.abierto {
+        animation: none;
+    }
+
+    .menu-toggle span {
+        transition: none;
+    }
+}
