@@ -77,7 +77,7 @@ loginForm.addEventListener("submit", function (event) {
 
         setTimeout(function () {
 
-            window.location.href = destino || "../indexnueva.html"
+            window.location.href = destino || "../index.html"
 
         }, 800)
 

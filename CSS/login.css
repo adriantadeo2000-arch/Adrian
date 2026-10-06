@@ -507,7 +507,7 @@ h1 {
     margin-left: -1px;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1024px) {
 
     .login-container {
         width: 90%;

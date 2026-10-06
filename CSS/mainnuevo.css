@@ -572,7 +572,7 @@ a {
     background-color: #926a4e;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1024px) {
 
     .navbar {
         padding: 0 25px;

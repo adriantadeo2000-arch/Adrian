@@ -473,7 +473,7 @@ a {
     background-color: #d99aaa;
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1024px) {
     .navbar {
         padding: 0 25px;
     }
