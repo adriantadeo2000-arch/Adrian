@@ -931,20 +931,28 @@ a {
 
 @media (max-width: 600px) {
 
+    .logo {
+        width: 90px;
+    }
+
+    .nav-iconos {
+        gap: 8px;
+    }
+
     .search-box {
         position: relative;
         top: auto;
         right: auto;
         transform: none;
-        margin-right: 8px;
+        margin-right: 6px;
     }
 
     .search-box.activo {
-        max-width: 100px;
+        max-width: clamp(60px, calc(100vw - 285px), 100px);
     }
 
     .search-box input {
-        width: 100px;
+        width: clamp(60px, calc(100vw - 285px), 100px);
     }
 
     .resultados {
@@ -953,4 +961,3 @@ a {
         width: 200px;
     }
 }
-
